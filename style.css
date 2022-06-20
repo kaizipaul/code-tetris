@@ -1,20 +1,70 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
 body {
-    padding: 25px;
-    background-color:#212020;
+    padding: 1em;
+    flex-direction: column;
+    background-color:hsl(240,3%,7%);
     color:white;
-    font-size: 25px;
+    font-size: clamp(.5rem,2.5vmin,1.5rem);
+    margin:0;
 }
 
 .container{
+    background:radial-gradient( #1c232c, #03f7f7);
+    width: 450px;
+    height: 490px;
     display: flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: .5em;
+}
+
+#start-button{
+    cursor: pointer;
+    background-color: hsl(200,1%,51%);
+    border: none;
+    justify-content: center;
+    align-items: center;
+    padding: 3;
+    display: flex;
+    color: white;
+    fill: white;
+    user-select: none;
+    border-radius: .25em;
+    box-shadow: 0 6px grey;
+    margin-left: 7.5em;
+}
+
+#start-button >svg{
+    width: 2em;
+    height: 2em;
+}
+
+#start-button:hover{
+    background-color: rgba(10,10,10,.5);
+}
+
+#start-button:active{
+    background-color: rgba(10,10,10,.5);
+    box-shadow: 0 3px white;
+    transform: translateY(4px);
 }
 
 .grid{
-width: 200px;
-height:400px;
-display: flex;
-flex-wrap: wrap;
-background-color: yellowgreen;
+    display: flex;
+    border-radius: .25em;
+    justify-content: center;
+    align-content: center;
+    width: 200px;
+    height:400px;
+    flex-wrap: wrap;
+    background-color: rgba(10,10,10,.7);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 2em;
 }
 
 .grid div{
@@ -27,15 +77,68 @@ background-color: yellowgreen;
 }
 
 .mini-grid{
+    background-color: rgba(10,10,10,.7);
+    border-radius: .25em;
+    justify-content: center;
+    align-content: center;
     margin-left: 50px;
     width: 80px;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellowgreen;
+    margin-top: 2em;
 }
 
 .mini-grid div{
     width: 20px;
     height: 20px;
+}
+
+.key{
+    cursor: pointer;
+    background: hsl(200,1%,51%);
+    border: none;
+    padding: 0;
+    color: white;
+    fill: white;
+    border-radius: .3em;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.key.up{
+    position: relative;
+    top: -0.1em;
+}
+
+.key >svg{
+    width: 1.75em;
+    height: 1.75em;
+}
+
+.direction-keys{
+    display:inline-block;
+    text-align: center;
+    width: 5em;
+    height: 3.5em;
+    border-radius: .3em;
+    margin-left: 15em;
+    margin-top:-2em;
+    user-select: none;
+}
+
+.score{
+    margin-top: 10em;
+    margin-left: -3em;
+}
+
+.key:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.key:active{
+    background-color: rgba(255,255,255,.5);
+    box-shadow: 0 3px white;
+    transform: translateY(4px);
 }
